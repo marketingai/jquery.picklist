@@ -14,39 +14,16 @@
   crossorigin="anonymous"></script>
   <script src="../jquery.picklist.js" charset="utf-8"></script>
   <script>
-    $('body').pickList({
-      leftListData: [
-        {
-          id: 'dog',
-          text: 'Dog'
-        },
-        {
-          id: 'frog',
-          text: 'Frog'
-        },
-        {
-          id: 'cat',
-          text: 'Cat'
-        },
-        {
-          id: 'log',
-          text: 'Log'
-        },
-        {
-          id: 'bog',
-          text: 'Bog'
-        }
-      ],
-      rightListData: [
-        {
-          id: 'mog',
-          text: 'Mog'
-        },
-        {
-          id: 'sog',
-          text: 'Sog'
-        }
-      ]
+    $.ajax({
+      url: 'https://api.github.com/users',
+      dataType: 'json',
+      contentType: 'application/json',
+      success: function(res) {
+        $('body').pickList({
+          leftListData: res,
+          columnItemText: 'login'
+        });
+      }
     });
   </script>
 </body>

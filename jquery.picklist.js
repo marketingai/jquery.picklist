@@ -22,8 +22,8 @@
 
       this.addItem = function(item) {
         var itemElmt = $('<option />')
-            .attr('value', item.id)
-            .text(item.text);
+            .attr('value', item[opts.columnItemValue])
+            .text(item[opts.columnItemText]);
         self.elmt.append(itemElmt);
         self.items.push(item);
         return self.items;
@@ -106,6 +106,8 @@
     listClass: 'mai-picklist-list',
     leftListData: [],
     rightListData: [],
+    columnItemValue: 'id',
+    columnItemText: 'text'
   };
 
 }(jQuery));
