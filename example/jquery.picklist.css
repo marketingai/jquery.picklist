@@ -1,0 +1,30 @@
+.mai-picklist-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  width: 100%;
+}
+
+.mai-picklist-list {
+  width: 100%;
+}
+
+.col-left,
+.col-middle,
+.col-right {
+  flex: 0 33.33%;
+  width: 33.33%;
+}
+
+.col-middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.mai-picklist-btn {
+  display: block;
+  width: 25%;
+}
