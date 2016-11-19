@@ -61,6 +61,7 @@
       var options = listA.find('option');
       options.appendTo(listB);
       listA.items = [];
+      listB.find('option:selected').prop('selected', false);
     }
 
     this.leftList  = new List(opts.leftListClass);
