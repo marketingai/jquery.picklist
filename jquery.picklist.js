@@ -10,7 +10,7 @@
         .addClass(opts.wrapperClass)
         .appendTo(opts.container);
 
-    function List() {
+    function List(classes) {
 
       var self = this;
 
@@ -18,7 +18,7 @@
 
       this.elmt = $('<select />')
           .attr('multiple', 'multiple')
-          .addClass(opts.listClass);
+          .addClass('mai-picklist-list ' + classes);
 
       this.addItem = function(item) {
         var itemElmt = $('<option />')
@@ -54,10 +54,17 @@
       for (var iterator = 0; iterator < selectedOptions; iterator++) {
         listA.removeItem(selectedOptions[iterator]);
       }
+      listB.find('option:selected').prop('selected', false);
     };
 
-    this.leftList  = new List();
-    this.rightList = new List();
+    function moveAll(listA, listB) {
+      var options = listA.find('option');
+      options.appendTo(listB);
+      listA.items = [];
+    }
+
+    this.leftList  = new List(opts.leftListClass);
+    this.rightList = new List(opts.rightListClass);
 
     this.leftColumn = $('<div />')
           .addClass(opts.leftColumnClass);
@@ -68,14 +75,24 @@
     this.rightColumn = $('<div />')
           .addClass(opts.rightColumnClass);
 
-    this.addBtn = new Control('Add', this.middleColumn);
+    this.addBtn = new Control('Add >', this.middleColumn);
     this.addBtn.on('click', function(e) {
       moveSelected(self.leftList.elmt, self.rightList.elmt);
     });
 
-    this.removeBtn = new Control('Remove', this.middleColumn);
+    this.addAllBtn = new Control('Add All >>', this.middleColumn);
+    this.addAllBtn.on('click', function(e) {
+      moveAll(self.leftList.elmt, self.rightList.elmt);
+    });
+
+    this.removeBtn = new Control('< Remove', this.middleColumn);
     this.removeBtn.on('click', function(e) {
       moveSelected(self.rightList.elmt, self.leftList.elmt);
+    });
+
+    this.removeAllBtn = new Control('<< Remove All', this.middleColumn);
+    this.removeAllBtn.on('click', function(e) {
+      moveAll(self.rightList.elmt, self.leftList.elmt);
     });
 
     wrapper.append(this.leftColumn)
@@ -103,9 +120,10 @@
     controlColumnClass: 'col-middle',
     rightColumnClass: 'col-right',
     controlButtonClass: 'mai-picklist-btn',
-    listClass: 'mai-picklist-list',
+    leftListClass: 'mai-picklist-leftlist',
     leftListData: [],
     rightListData: [],
+    rightListClass: 'mai-picklist-rightlist',
     columnItemValue: 'id',
     columnItemText: 'text'
   };
