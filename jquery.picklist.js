@@ -54,6 +54,7 @@
       for (var iterator = 0; iterator < selectedOptions; iterator++) {
         listA.removeItem(selectedOptions[iterator]);
       }
+      $(opts.container).trigger('itemsMovedEvent', [selectedOptions]);
       listB.find('option:selected').prop('selected', false);
     };
 
@@ -61,6 +62,7 @@
       var options = listA.find('option');
       options.appendTo(listB);
       listA.items = [];
+      $(opts.container).trigger('allItemsMovedEvent', [options]);
       listB.find('option:selected').prop('selected', false);
     }
 

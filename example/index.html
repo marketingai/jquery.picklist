@@ -25,6 +25,12 @@
         });
       }
     });
+    $(document.body).on('allItemsMovedEvent', function(e, items) {
+      console.log(items);
+    });
+    $(document.body).on('itemsMovedEvent', function(e, items) {
+      console.log(items);
+    });
   </script>
 </body>
 </html>
