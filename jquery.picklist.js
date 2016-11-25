@@ -78,22 +78,22 @@
     this.rightColumn = $('<div />')
           .addClass(opts.rightColumnClass);
 
-    this.addBtn = new Control('Add >', this.middleColumn);
+    this.addBtn = new Control(opts.addBtnText, this.middleColumn);
     this.addBtn.on('click', function(e) {
       moveSelected(self.leftList.elmt, self.rightList.elmt);
     });
 
-    this.addAllBtn = new Control('Add All >>', this.middleColumn);
+    this.addAllBtn = new Control(opts.addAllBtnText, this.middleColumn);
     this.addAllBtn.on('click', function(e) {
       moveAll(self.leftList.elmt, self.rightList.elmt);
     });
 
-    this.removeBtn = new Control('< Remove', this.middleColumn);
+    this.removeBtn = new Control(opts.removeBtnText, this.middleColumn);
     this.removeBtn.on('click', function(e) {
       moveSelected(self.rightList.elmt, self.leftList.elmt);
     });
 
-    this.removeAllBtn = new Control('<< Remove All', this.middleColumn);
+    this.removeAllBtn = new Control(opts.removeAllBtnText, this.middleColumn);
     this.removeAllBtn.on('click', function(e) {
       moveAll(self.rightList.elmt, self.leftList.elmt);
     });
@@ -128,7 +128,11 @@
     rightListData: [],
     rightListClass: 'mai-picklist-rightlist',
     columnItemValue: 'id',
-    columnItemText: 'text'
+    columnItemText: 'text',
+    addBtnText: '>',
+    addAllBtnText: '>>',
+    removeBtnText: '<',
+    removeAllBtnText: '<<'
   };
 
 }(jQuery));
