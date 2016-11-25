@@ -1,0 +1,23 @@
+{
+  "name": "jquery.picklist",
+  "main": "jquery.picklist.js",
+  "homepage": "https://github.com/marketingai/jquery.picklist",
+  "authors": [
+    "Austin Buckler <austin.buckler@marketing.ai>"
+  ],
+  "description": "A picklist made with jQuery",
+  "keywords": [
+    "jquery",
+    "picklist",
+    "pick",
+    "list"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
