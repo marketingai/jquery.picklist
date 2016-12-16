@@ -102,7 +102,10 @@
            .append(this.middleColumn)
            .append(this.rightColumn);
 
+    this.leftColumn.append(opts.leftListTitle);
     this.leftColumn.append(this.leftList.elmt);
+    
+    this.rightColumn.append(opts.rightListTitle);
     this.rightColumn.append(this.rightList.elmt);
 
     for (var iterator = 0; iterator < opts.leftListData.length; iterator++) {
@@ -132,7 +135,9 @@
     addBtnText: '>',
     addAllBtnText: '>>',
     removeBtnText: '<',
-    removeAllBtnText: '<<'
+    removeAllBtnText: '<<',
+    leftListTitle: '<h2>Available Columns</h2>',
+    rightListTitle: '<h2>Selected Columns</h2>'
   };
 
 }(jQuery));
