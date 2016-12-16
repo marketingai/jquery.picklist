@@ -43,7 +43,7 @@
       var elmt = $('<button />')
         .addClass(opts.controlButtonClass)
         .appendTo(container)
-        .text(name);
+        .html(name);
 
       return elmt;
     };
@@ -104,7 +104,7 @@
 
     this.leftColumn.append(opts.leftListTitle);
     this.leftColumn.append(this.leftList.elmt);
-    
+
     this.rightColumn.append(opts.rightListTitle);
     this.rightColumn.append(this.rightList.elmt);
 
