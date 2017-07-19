@@ -1,0 +1,23 @@
+{
+  "name": "jquery.picklist",
+  "version": "1.0.4",
+  "description": "A very simple picklist for jQuery",
+  "main": "jquery.picklist.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marketingai/jquery.picklist.git"
+  },
+  "keywords": [],
+  "author": "Mintent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marketingai/jquery.picklist/issues"
+  },
+  "homepage": "https://github.com/marketingai/jquery.picklist#readme"
+}
