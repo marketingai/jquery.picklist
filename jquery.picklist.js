@@ -43,7 +43,7 @@
       var elmt = $('<button />')
         .addClass(opts.controlButtonClass)
         .appendTo(container)
-        .text(name);
+        .html(name);
 
       return elmt;
     };
